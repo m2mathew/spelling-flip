@@ -5,10 +5,18 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Pie from './pie/pie';
-import MainContentContainer from './shared/main-content-container/index'
+import MainContentContainer from './shared/main-content-container/index';
+import
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      condition: false,
+    };
+  }
+
   render() {
     return (
       <div className="App">
@@ -23,11 +31,11 @@ class App extends Component {
         <MainContentContainer
           title="Words"
         >
-          <Pie
-            progress={50}
-            color='#7dbf69'
-            width={5}
-          />
+          <div className={this.state.flipped ? "flipped card-container" : "card-container"}>
+
+
+
+          </div>
         </MainContentContainer>
       </div>
     );
@@ -35,3 +43,12 @@ class App extends Component {
 }
 
 export default App;
+
+
+/*
+<Pie
+  progress={50}
+  color='#7dbf69'
+  width={5}
+/>
+*/

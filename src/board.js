@@ -229,58 +229,65 @@ class GoalCard extends React.Component {
     }
 
 	   return(
-		     <div className={this.state.condition ? "flipped card-container" :"card-container"} >
+		     <div className={this.state.condition ? "flipped card-container" : "card-container"} >
 
 						<figure className="front">
     					<div className="goal--top">
-    						<a href="#" className="edit" onClick={this.editGoal.bind(this, this.props.item.index)}><i className="fa fa-pencil-square-o"></i></a>
-    					<div className="goal__name">{this.props.item.name}</div>
-            	<Application percent={(this.props.item.progress/this.props.item.amount)} colorChart={strokeColor}/>
-    					<div className="goal--top__container">
-    						<i className={'category fa fa-' + this.props.item.category} aria-hidden="true"></i>
-    						<div className="goal--progress"><span className="money">
-    							{(this.props.item.progress).toLocaleString()}</span>
-    						</div>
-    						<div className="goal--amount">of <span className="money">{(this.props.item.amount).toLocaleString()}</span>
-    						</div>
-    					</div>
-    				</div>
-    				<div className="goal--bottom">
-    					<div className="descriptor">{status}
-    						<span className="money right goal--remain">{remaining}</span>
-    						<span className="percent right">{percentRemaining}</span>
-    					</div>
-
-    					<Example
-    						name={this.props.item.name}
-    						progress={this.props.item.progress}
-    						amount={this.props.item.amount}
-    						onSave={this.onSave.bind(this)}
-
-    					/>
-    				</div>
+    						<a href="#" className="edit" onClick={this.editGoal.bind(this, this.props.item.index)}>
+                  <i className="fa fa-pencil-square-o"></i>
+                </a>
+      					<div className="goal__name">{this.props.item.name}</div>
+              	<Application
+                  percent={(this.props.item.progress/this.props.item.amount)}
+                  colorChart={strokeColor}
+                />
+      					<div className="goal--top__container">
+      						<i className={'category fa fa-' + this.props.item.category} aria-hidden="true"></i>
+      						<div className="goal--progress"><span className="money">
+      							{(this.props.item.progress).toLocaleString()}</span>
+      						</div>
+      						<div className="goal--amount">of <span className="money">{(this.props.item.amount).toLocaleString()}</span>
+      						</div>
+      					</div>
+      				</div>
+      				<div className="goal--bottom">
+      					<div className="descriptor">{status}
+      						<span className="money right goal--remain">{remaining}</span>
+      						<span className="percent right">{percentRemaining}</span>
+      					</div>
+      					<Example
+      						name={this.props.item.name}
+      						progress={this.props.item.progress}
+      						amount={this.props.item.amount}
+      						onSave={this.onSave.bind(this)}
+      					/>
+      				</div>
 						</figure>
 						<figure className="back">
-
-							<a href="#" className="back-arrow" onClick={this.cancelEdit.bind(this, this.props.item.index)}><i className="fa fa-angle-left"></i></a>
+							<a href="#" className="back-arrow" onClick={this.cancelEdit.bind(this, this.props.item.index)}>
+                <i className="fa fa-angle-left"></i>
+              </a>
 							<h3 className="card-title">Goal Details</h3>
 							<div className="input-container">
 								<label name="name" className="descriptor">Name</label>
-							<input type="text" placeholder="Goal Name" value={this.state.input1} onChange={this.handleChange.bind(this, 'input1')} />
-									<label name="amount" className="descriptor">Goal</label>
-								<span className="edit-money">$</span><input type="number" placeholder="Amount" value={this.state.input2} onChange={this.handleChange.bind(this, 'input2')} />
-            	<label name="progress" className="descriptor">Progress</label>
-								<span className="edit-money">$</span>	<input type="number" placeholder="Progress" value={this.state.input3} onChange={this.handleChange.bind(this, 'input3')} />									<label name="icon" className="descriptor">Icon</label>
+							  <input type="text" placeholder="Goal Name" value={this.state.input1} onChange={this.handleChange.bind(this, 'input1')} />
+								<label name="amount" className="descriptor">Goal</label>
+								<span className="edit-money">$</span>
+                <input type="number" placeholder="Amount" value={this.state.input2} onChange={this.handleChange.bind(this, 'input2')} />
+            	  <label name="progress" className="descriptor">Progress</label>
+								<span className="edit-money">$</span>
+                <input type="number" placeholder="Progress" value={this.state.input3} onChange={this.handleChange.bind(this, 'input3')} />
+                <label name="icon" className="descriptor">Icon</label>
 								<div className="dropdown-wrapper">
-								<select
-                  value={this.state.selectValue}
-                  onChange={this.handleDropdown.bind(this)}
-                >
-                  <option value="car">Car</option>
-                  <option value="plane">Plane</option>
-                  <option value="">None</option>
-                </select>
-							</div>
+  								<select
+                    value={this.state.selectValue}
+                    onChange={this.handleDropdown.bind(this)}
+                  >
+                    <option value="car">Car</option>
+                    <option value="plane">Plane</option>
+                    <option value="">None</option>
+                  </select>
+  							</div>
 							</div>
 							<input
                 className="button"

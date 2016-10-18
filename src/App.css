@@ -23,6 +23,16 @@ body {
   font-size: large;
 }
 
+.card-container {
+	transform-style: preserve-3d;
+	transition: transform 1s;
+}
+
+.flipped {
+	transform: rotateY( 180deg );
+	-webkit-transform: rotateY( 180deg );
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
