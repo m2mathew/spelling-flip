@@ -12,16 +12,17 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <img
+            alt="logo"
+            className="App-logo"
+            src={logo}
+          />
+          <h2>Spelling Flip</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
         <Pie
           progress={50}
           color='#7dbf69'
-          width={15}
+          width={5}
         />
       </div>
     );

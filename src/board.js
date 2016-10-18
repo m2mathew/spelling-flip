@@ -5,117 +5,119 @@ const Modal = ReactBootstrap.Modal;
 const OverlayTrigger = ReactBootstrap.OverlayTrigger;
 
 
-class Pie extends React.Component {
+// class Pie extends React.Component {
+//
+// 	render() {
+// 		const {
+// 			color,
+// 			width,
+// 			progress
+// 		} = this.props;
+// 		const pi = 3.14159265359;
+// 		const r = (400 / 2);
+// 		const c = (2 * pi) * r;
+// 		const realProgress = c * progress;
+// 		return (
+// 			<div className="svg-container">
+//         <div className="svg-content">
+//           <svg
+//             viewBox="0 0 500 500"
+//             preserveAspectRatio="xMinYMin meet"
+//           >
+//         		<filter id="shadow">
+//               <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+//         			<feOffset dx="-5" dy="-4" />
+//             </filter>
+//
+//             <circle
+//               className="animated"
+//               cx="250"
+//               cy="250"
+//               r="200"
+//               stroke={""}
+//               fillOpacity="0"
+//               strokeWidth={width + 10}
+//               strokeDasharray={[realProgress,  c]}
+//               strokeDashoffset={c * progress}
+//             />
+// 						<circle
+// 							filter="url(#shadow)"
+// 						  className="animated shadow"
+//               cx="250"
+//               cy="250"
+//               r="200"
+//               stroke={color}
+//               fillOpacity="0"
+//               strokeWidth={width}
+//               strokeDasharray={[realProgress,  c]}
+//               strokeDashoffset={c * progress}
+//             />
+//             <circle
+// 						  className="animated fill"
+//               cx="250"
+//               cy="250"
+//               r="200"
+//               stroke={color}
+//               fillOpacity="0"
+//               strokeWidth={width}
+//               strokeDasharray={[realProgress,  c]}
+//               strokeDashoffset={c * progress}
+//             />
+//             <circle
+//               cx="250"
+//               cy="250"
+//               r="200"
+//               stroke={color}
+//               fillOpacity="0"
+//               strokeWidth="5"
+//               strokeDasharray={[c,  c]}
+//               strokeOpacity="0.1"
+//             />
+//           </svg>
+//         </div>
+//       </div>
+// 		);
+// 	}
+// }
 
-	render() {
-		const {
-			color,
-			width,
-			progress
-		} = this.props;
-		const pi = 3.14159265359;
-		const r = (400 / 2);
-		const c = (2 * pi) * r;
-		const realProgress = c * progress;
-		return (
-			<div className="svg-container">
-        <div className="svg-content">
-          <svg
-            viewBox="0 0 500 500"
-            preserveAspectRatio="xMinYMin meet"
-          >
-        		<filter id="shadow">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
-        			<feOffset dx="-5" dy="-4" />
-            </filter>
 
-            <circle
-              className="animated"
-              cx="250"
-              cy="250"
-              r="200"
-              stroke={""}
-              fillOpacity="0"
-              strokeWidth={width + 10}
-              strokeDasharray={[realProgress,  c]}
-              strokeDashoffset={c * progress}
-            />
-						<circle
-							filter="url(#shadow)"
-						  className="animated shadow"
-              cx="250"
-              cy="250"
-              r="200"
-              stroke={color}
-              fillOpacity="0"
-              strokeWidth={width}
-              strokeDasharray={[realProgress,  c]}
-              strokeDashoffset={c * progress}
-            />
-            <circle
-						  className="animated fill"
-              cx="250"
-              cy="250"
-              r="200"
-              stroke={color}
-              fillOpacity="0"
-              strokeWidth={width}
-              strokeDasharray={[realProgress,  c]}
-              strokeDashoffset={c * progress}
-            />
-            <circle
-              cx="250"
-              cy="250"
-              r="200"
-              stroke={color}
-              fillOpacity="0"
-              strokeWidth="5"
-              strokeDasharray={[c,  c]}
-              strokeOpacity="0.1"
-            />
-          </svg>
-        </div>
-      </div>
-		);
-	}
-}
-
-
-class Application extends React.Component {
-
-	render() {
-		const percent = this.props.percent;
-		const colorChart = this.props.colorChart;
-		return (
-			<div>
-        <div className="box">
-          <Pie
-      			progress={percent}
-            color={colorChart}
-            width={15}
-          />
-        </div>
-      </div>
-		);
-	}
-}
+// class Application extends React.Component {
+//
+// 	render() {
+// 		const percent = this.props.percent;
+// 		const colorChart = this.props.colorChart;
+// 		return (
+// 			<div>
+//         <div className="box">
+//           <Pie
+//       			progress={percent}
+//             color={colorChart}
+//             width={15}
+//           />
+//         </div>
+//       </div>
+// 		);
+// 	}
+// }
 
 const progressUpdate;
-const goals = [{
-	category: 'car',
-	name: 'Car',
-	amount: 20000,
-	progress: 6593,
-	flipped: false,
-	dragStatus: true
-}, {
-	category: 'plane',
-	name: 'Vacation',
-	amount: 3500,
-	progress: 2984,
-	flipped: false,
-	dragStatus: true
-}];
+const goals = [
+  {
+  	category: 'car',
+  	name: 'Car',
+  	amount: 20000,
+  	progress: 6593,
+  	flipped: false,
+  	dragStatus: true
+  }, {
+  	category: 'plane',
+  	name: 'Vacation',
+  	amount: 3500,
+  	progress: 2984,
+  	flipped: false,
+  	dragStatus: true
+  },
+];
 
 const dragStatus = true;
 
