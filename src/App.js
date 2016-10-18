@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Pie from './pie/pie';
+import MainContentContainer from './shared/main-content-container/index'
 
 
 class App extends Component {
@@ -19,11 +20,15 @@ class App extends Component {
           />
           <h2>Spelling Flip</h2>
         </div>
-        <Pie
-          progress={50}
-          color='#7dbf69'
-          width={5}
-        />
+        <MainContentContainer
+          title="Words"
+        >
+          <Pie
+            progress={50}
+            color='#7dbf69'
+            width={5}
+          />
+        </MainContentContainer>
       </div>
     );
   }
